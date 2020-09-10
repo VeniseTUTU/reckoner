@@ -1,0 +1,67 @@
+Options -MultiViews
+RewriteEngine On
+
+ErrorDocument 404 /index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^index.html [QSA,L]
+
+
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/report/([^/]+)/?$ /api/report/rankcountry.php?country=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/visualize/([^/]+)/([^/]+)/?$ /api/visualize/visualizedata.php?country=$1&indicator=$2 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/visualizestate/([^/]+)/([^/]+)/?$ /api/visualize/visualizestatedata.php?state=$1&indicator=$2 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/states/([^/]+)/?$ /api/states/states.php?country=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/usergoals/([^/]+)/?$ /api/user/readgoals.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/userindicators/([^/]+)/?$ /api/user/readindicators.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/userstates/([^/]+)/?$ /api/user/readstates.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/storedata/([^/]+)/?$ /api/user/createdata.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/validate/([^/]+)/?$ /api/user/validateuser.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/userprofile/([^/]+)/?$ /api/user/readuser.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/userdata/([^/]+)/?$ /api/user/readdata.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/createuser/([^/]+)/?$ /api/user/createuser.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/allgoals/([^/]+)/?$ /api/utilities/readgoals.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/allcountries/([^/]+)/?$ /api/utilities/readcountries.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/allgoalindicators/([^/]+)/?$ /api/utilities/readindicators.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/oneindicator/([^/]+)/?$ /api/utilities/readoneindicator.php?indicator=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/aboutgoal/([^/]+)/?$ /api/utilities/aboutgoal.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/allgoaltargets/([^/]+)/?$ /api/utilities/readtargets.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/allteams/([^/]+)/?$ /api/utilities/readteam.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/contact/([^/]+)/?$ /api/utilities/contact.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/validatemail/([^/]+)/?$ /api/user/validatemail.php?userid=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/verifycode/([^/]+)/?$ /api/user/verifycode.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/passchange/([^/]+)/?$ /api/user/changepassword.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/updateacc/([^/]+)/?$ /api/user/updateuser.php?goal=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/createvolunteer/([^/]+)/?$ /api/utilities/createvolunteer.php?vol=$1 [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^api/createpartner/([^/]+)/?$ /api/utilities/createpartner.php?partn=$1 [NC,L]
+
+
+
+
+
